@@ -1,6 +1,6 @@
 [submodule "Vendor/OCHamcrest"]
 	path = Vendor/OCHamcrest
-	url = git@github.com:hamcrest/OCHamcrest.git
+	url = git://github.com/hamcrest/OCHamcrest.git
 [submodule "Vendor/TouchJSON"]
 	path = Vendor/TouchJSON
-	url = git@github.com:mrevilme/TouchJSON.git
+	url = git://github.com/mrevilme/TouchJSON.git
