@@ -55,12 +55,11 @@
   if (URLConnection == nil) {
     [self setFinished:YES]; 
   }
-  
-  // Common modes instead of default so it won't stall uiscrollview scrolling
-  [URLConnection scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+
+  // Schedule the url connection on a queue and not in the run loop
+  // In OS X calling run on the current run loop results in an infinite loop => operation and thread gets never cleared
+  [URLConnection setDelegateQueue:[NSOperationQueue currentQueue]];
   [URLConnection start];
-  
-  [[NSRunLoop currentRunLoop] run];
 }
 
 - (void)finish;
